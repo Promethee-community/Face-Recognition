@@ -53,12 +53,15 @@ We have developed a DNN to classify faces according to their gender (male/female
 
 ## Tree structure 
 
-(mettre le tree)
-
+&nbsp;
+&nbsp;
+![image](https://user-images.githubusercontent.com/88309709/128353574-626e9cff-6e8a-4fe8-967a-91be2c78207f.png)
+&nbsp;
+&nbsp;
 
 
 Here is our project file, « GenderDetection ». You will find on it :
-- a code opensource file named **GenderDectection**, containing all useful codes for the project
+- a code opensource file named **GenderClassification**, containing all useful codes for the project
 - a **results** file, to store results of predictions (and ? Comparisons etc ?)
 - an empty file named **Dataset**, which you will fill later (see [Instructions](#id-section3))
 
@@ -108,10 +111,10 @@ You should find here all the folders shown in the tree structure : run `ls -lah`
 Our **Dataset** folder can be provided on demand. As shown on the scheme, this file is divided into
 four other ones :
 
-- **test**, containing 65554 images from wondonghyeon’s dataset to test the model
-- **train**, containing 131141 images from wondonghyeon’s dataset to train the model 
-- **test2**, containing 12896 images from our dataset to test the model
-- **train 2**, containing 25791 images from our dataset to train the model
+- **test**, containing (65554) images from wondonghyeon’s dataset to test the model
+- **train**, containing (131141) images from wondonghyeon’s dataset to train the model 
+- **test2**, containing (12896) images from our dataset to test the model
+- **train 2**, containing (25791) images from our dataset to train the model
 
 You can ask for access by clicking here : (link). 
 Meanwhile, you can discover the project ([The project (step by step)](#id-section5)) and Promethee’s concept([What about Prométhée ?](#id-section9))
@@ -206,9 +209,9 @@ In order to improve it, lets first modify the rate (_train.py_, line 26).
 # What about Prométhée? 
 
 &nbsp;
-[Prométhée] is an association, aiming to bring together : 
-+ qualified volonteers, loving to work on IA (especially on images classification)
-+ volonteers willing to support useful and ethical projects
+> [Prométhée] is an association, aiming to bring together : 
+> + qualified volonteers, loving to work on IA (especially on images classification)
+> + volonteers willing to support useful and ethical projects
 
 &nbsp;
 
