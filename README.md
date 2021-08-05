@@ -58,9 +58,9 @@ We have developed a DNN to classify faces according to their gender (male/female
 
 
 Here is our project file, « GenderDetection ». You will find on it :
-- a code opensource file, containing all useful codes for the project
-- a results file, to store results of predictions (and ? Comparisons etc ?)
-- an empty file named Dataset, which you will fill later (see [Instructions](#id-section3))
+- a code opensource file named **GenderDectection**, containing all useful codes for the project
+- a **results** file, to store results of predictions (and ? Comparisons etc ?)
+- an empty file named **Dataset**, which you will fill later (see [Instructions](#id-section3))
 
 &nbsp;
 &nbsp;
@@ -89,7 +89,7 @@ Let’s begin ! Once you have installed all packages, download the **GenderDetec
 its path (ou donner commande pour le retrouver? Juste sous linux?).
 As an exemple, my path is : home/user1/promethee/.
 
-- If you want to use our data : go to [Dataset](#id-section4), follow instructions
+- If you want to use our data : go to [Dataset](#id-section4), follow instructions, and dezip it on **GenderDetection** file. 
 - If you prefer using your own data : (?)
 
 On your terminal, use the cd command and run cd + your GenderDetection path. In my case :
@@ -113,7 +113,7 @@ four other ones :
 - **test2**, containing 12896 images from our dataset to test the model
 - **train 2**, containing 25791 images from our dataset to train the model
 
-You can ask for access by clicking here : (link).
+You can ask for access by clicking here : (link). 
 Meanwhile, you can discover the project ([The project (step by step)](#id-section5)) and Promethee’s concept([What about Prométhée ?](#id-section9))
 
 &nbsp;
@@ -191,7 +191,7 @@ For each picture, our _gen_train_data.py_ script generates a 128 octets' signatu
 The _train.py_ script works with **train** and **train2** folders. It uses _X.npy_ and _Y.npy_ to run our DNN. An accuracy is given
 . To see it by yourself, please run the following command : (could take a long time)
 
-+ `python3 train.py`
+`python3 train.py`
 
 What percentage are you getting? We roughly get 98%. 
 In order to improve it, lets first modify the rate (_train.py_, line 26). 
