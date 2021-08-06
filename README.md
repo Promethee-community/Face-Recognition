@@ -7,21 +7,21 @@
 &nbsp;
 &nbsp;
 &nbsp;
-<p align="center"> 
-This work is entirely inspired from the following repository : https://github.com/wondonghyeon/face-classification.  
-Wondonghyeon, thank you for your great work !
-</p>
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
 
 We have developed a DNN to classify faces according to their gender (male/female). We used Wondonghyeon’s work, Python3 and Keras/Tenserflow. Let's test and re-train this model !           |  
 :-------------------------:
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<p align="center"> 
+This work is inspired from the following repository : https://github.com/wondonghyeon/face-classification.  
+Wondonghyeon, thank you for your great work !
+</p>
 
 &nbsp;
 &nbsp;
@@ -39,17 +39,16 @@ We have developed a DNN to classify faces according to their gender (male/female
 - [Instructions](#id-section3)
 - [Dataset](#id-section4)
 - [The project (step by step)](#id-section5)
-  - [Model Testing](#id-section6)
-  - [Accuracy](#id-section7)
+  - [Model testing : your images](#id-section6)
+  - [Model testing : our dataset](#id-section7)
   - [Model Training](#id-section8)
 - [What about Prométhée ?](#id-section9)
 
 
 
 
-&nbsp;
-&nbsp;
 <div id='id-section1'/>
+&nbsp;   
 
 ## Tree structure 
 
@@ -62,12 +61,13 @@ We have developed a DNN to classify faces according to their gender (male/female
 
 Here is our project file, « GenderDetection ». You will find on it :
 - a code opensource file named **GenderClassification**, containing all useful codes for the project
-- a **results** file, to store results of predictions (and ? Comparisons etc ?)
-- an empty file named **Dataset**, which you will fill later (see [Instructions](#id-section3))
+- a **train** file, to store all versions of your training
+- an empty file named **Dataset**, which you can fill on demand (see [Instructions](#id-section3))
 
 &nbsp;
-&nbsp;
+
 <div id='id-section2'/>
+&nbsp;   
 
 ## Packages required
 
@@ -83,17 +83,18 @@ Here are listed the packages required for the project :
 - [scikit-learn](https://scikit-learn.org/stable/)
 
 &nbsp;
-&nbsp;
+
 <div id='id-section3'/>
+&nbsp;   
 
 ## Instructions
 
 Let’s begin ! Once you have installed all packages, download the **GenderDetection** file. Remember
-its path (ou donner commande pour le retrouver? Juste sous linux?).
+its path.
 As an exemple, my path is : home/user1/promethee/.
 
 - If you want to use our data : go to [Dataset](#id-section4), follow instructions, and dezip it on **GenderDetection** file. 
-- If you prefer using your own data : (?)
+- If you prefer using your own data : put your image(s) (format .jpg) on **../Dataset/mypicture_data** directory. 
 
 On your terminal, use the cd command and run cd + your GenderDetection path. In my case :
 &nbsp;
@@ -102,25 +103,29 @@ On your terminal, use the cd command and run cd + your GenderDetection path. In 
 
 You should find here all the folders shown in the tree structure : run `ls -lah` to check it. 
 
-&nbsp;
+
 &nbsp;
 <div id='id-section4'/>
+&nbsp;   
 
 ## Dataset
 
 Our **Dataset** folder can be provided on demand. As shown on the scheme, this file is divided into
 four other ones :
 
-- **test**, containing (65554) images from wondonghyeon’s dataset to test the model
+- **test**, containing (65554) images from wondonghyeon’s dataset to test the model (thus 30% of images are used for validation)
 - **train**, containing (131141) images from wondonghyeon’s dataset to train the model 
-- **test2**, containing (12896) images from our dataset to test the model
-- **train 2**, containing (25791) images from our dataset to train the model
+- **test2**, containing (12896) images from our dataset to test the model (here to, 30% of images are used for validation)
+- **train2**, containing (25791) images from our dataset to train the model
+- **mypicture_data**, containing your own image(s) if wished
+
+
 
 You can ask for access by clicking here : (link). 
 Meanwhile, you can discover the project ([The project (step by step)](#id-section5)) and Promethee’s concept([What about Prométhée ?](#id-section9))
 
 &nbsp;
-&nbsp;
+
 <div id='id-section5'/>
 
 ---------------------------------------------------------------
@@ -128,76 +133,92 @@ Meanwhile, you can discover the project ([The project (step by step)](#id-sectio
 
 ## The project (step by step)
 
-&nbsp;
+
 <div id='id-section6'/>
+&nbsp;   
 
-### Model testing 
+### Model testing : your images
 
-_pred.py_ script is directly inspired from Wondonghyeon’s project. Its purpose is to test the _face_model.pkl_ 
-model, which detects faces on the image. Now please run the following command :
+_test.py_ script is inspired from Wondonghyeon’s project. Its purpose is to test our model, _default_model.h5_, which detects and caracterizes faces on the image. If you have added your own images on **mypicture_data**, please run the following command : (else, move to [Model testing : our dataset](#id-section7))
 
-`python3 pred.py`
+`python3 test.py`
 
+&nbsp; 
 
-This script takes images from the **test** dataset (by Wondonghyeon), generates a csv by image as the
-one below, and stores it on the **results** folder):
-
-
-![image](https://user-images.githubusercontent.com/88309709/128307869-b716dc44-3897-4baa-9fcd-a60ee83fd8b2.png)
-
-Please focus on the "Male" indication : close to 1 means "man" , close to 0 means "woman". Here, _pred.py_ detects a woman.
-On [Accuracy](#id-section7), we will see how accurate is this prediction. 
-
-&nbsp;
-
-
-To test images from our dataset (in **test2**), please run :
-
-`python3 pred.py --img_dir ../Dataset/test2--output_dir results2`
-
-Similarly, results will be stored on the **result2** folder.
+>If you get this kind of error : 
+>#File "/home/user/.local/lib/python3.6/site-packages/sklearn/model_selection/_split.py", line 25, in <module>
+>    from scipy.misc import comb
+>ImportError: cannot import name 'comb'  
+>run :  
+>nano + the directory of the file (in my case : nano /home/user/.local/lib/python3.6/site-packages/sklearn/model_selection/_split.py)
+>then replace « from scipy.misc import comb » by « from scipy.special import comb ».
+>Redo for each error message. 
+>
+>Why ? For deprecated scipy version, « comb » was on the « misc » module :it is now on the « misc » one. 
+  
+&nbsp;   
 
 
-&nbsp;
+This script takes images from the **mypicture_data** dataset. 
+It displays your images, and adds gender prediction on the title : you can read "It's a Man !" or "It's a Woman !". Let's see an example :
+&nbsp; 
+
+  
+  Your image            |  What test.py displays
+:-------------------------:|:-------------------------:
+<img src="https://user-images.githubusercontent.com/88309709/128505009-91ec72a1-2266-494d-89bb-7805417e893b.jpg" width="400">  |  <img src="https://user-images.githubusercontent.com/88309709/128504890-d7a4aa0b-da04-4670-a634-e2e88bcd3de5.png" width="400"> 
+
+&nbsp; 
+  
+Did _test.py_ succeeded on your image(s)?  
+
 <div id='id-section7'/>
+&nbsp;   
 
-### Accuracy
-
-Let’s compare our results with reality. We will focus on gender : is our model enable to find gender
-when analyzing a face ?
-
-_List_attr_celeba.txt_ file contains real features for each picture in the **test** folder (Wondonghyeon’s
-pictures). For each image, features are displayed on the same line. When looking at Column n°21 ("Male"): -1 is used for describing a woman, and 1 for 
-describing a man. To compare it with **results** content, please run the following command :
-
-`python3 comput_acc.py`
-
-The script displays an accuracy percentage. We get "acc :98%", and you? 
-
-&nbsp;
-
-For obtaining an accuracy percentage using our dataset, please run : 
-
-`python3 comput_acc.py --input_dir results2 --input_label ../Dataset/coco_open.txt`
-
-This script uses our _coco_train.txt_ file, containing features for each picture in the **test2** folder. Features are compared with **results2** content. We get "acc : 88%", what about you? 
+### Model testing : our dataset 
+  
+_gen_val_data.py_ script uses **test2** dataset. Then it generates a 128 octets signature and a gender label, for each image.  
+We are going to evaluate our model's accuracy on this dataset : please run  
+  
+`python3 evaluate.py`
+ 
+&nbsp;   
+  
+_evaluate.py_ returns:
+- the number of errors (how many "Women" images have been labeled as "Men" ? And vice-versa). 
+- the accuracy (relative number of good predictions, in %)
+  
+  
+Normally you should get an accuracy of approximately 98%: let's improve it !  
 
 
 &nbsp;
 <div id='id-section8'/>
 
-###  Model training 
+ &nbsp;   
+  
+  
+### Model training
 
-Let's move to our model training. Before running the command, some explanations : 
-
-For each picture, our _gen_train_data.py_ script generates a 128 octets' signature (stored in _X.npy_) and a gender label (stored in _Y.npy_).
-The _train.py_ script works with **train** and **train2** folders. It uses _X.npy_ and _Y.npy_ to run our DNN. An accuracy is given
-. To see it by yourself, please run the following command : (could take a long time)
-
+_gen_data.py_ script uses **train** and **train2** dataset(s). Then it generates a 128 octets signature and a gender label, for each image.  
+We are going to improve our model's accuracy on these datasets : please run  
+  
 `python3 train.py`
+ 
+&nbsp;   
+  
+_train.py_ returns:
+- the accuracy of our model 
+- its target loss
+  
+This trained model is stored in **../GenderClassification/train**. To use it next time, please replace our "default_model.h5" by this one.
+  
+  
+Which accuracy are you getting? 
 
-What percentage are you getting? We roughly get 98%. 
-In order to improve it, lets first modify the rate (_train.py_, line 26). 
+
+
+
 
 &nbsp;
 &nbsp;
@@ -215,7 +236,7 @@ In order to improve it, lets first modify the rate (_train.py_, line 26).
 
 &nbsp;
 
-Want to join us/ to know more about Prométhée ? Please click on there : (link promethee page Fb?)
+Want to join us/ to know more about Prométhée ? Please send us an email !
 
 
 
