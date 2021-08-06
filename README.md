@@ -54,9 +54,11 @@ Wondonghyeon, thank you for your great work !
 
 &nbsp;
 &nbsp;
-![image](https://user-images.githubusercontent.com/88309709/128353574-626e9cff-6e8a-4fe8-967a-91be2c78207f.png)
+![image](https://user-images.githubusercontent.com/88309709/128521244-e1c97c66-2378-484f-af8e-413d81c27f8a.png)
 &nbsp;
 &nbsp;
+
+
 
 
 Here is our project file, « GenderDetection ». You will find on it :
