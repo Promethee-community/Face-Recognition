@@ -241,7 +241,7 @@ Which accuracy are you getting?
 # What about Prométhée? 
 
 &nbsp;
-> [Prométhée] is an association, aiming to bring together : 
+> **Prométhée** is an association, aiming to bring together : 
 > + qualified volonteers, loving to work on IA (especially on images classification)
 > + volonteers willing to support useful and ethical projects
 
