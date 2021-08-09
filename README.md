@@ -65,7 +65,7 @@ Wondonghyeon, thank you for your great work !
 Here is our project file, « GenderDetection ». You will find on it :
 - a code opensource file named **GenderClassification**, containing all useful codes for the project
 - a **train** file, to store all versions of your training
-- an empty file named **Dataset**, which you can fill on demand (see [Instructions](#id-section3))
+- file named **Dataset**, which you can retrieve on demand (see [Instructions](#id-section3))
 
 &nbsp;
 
