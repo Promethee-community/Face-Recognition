@@ -65,7 +65,7 @@ Wondonghyeon, thank you for your great work !
 Here is our project file, « GenderDetection ». You will find on it :
 - a code opensource file named **GenderClassification**, containing all useful codes for the project
 - a **train** file, to store all versions of your training
-- file named **Dataset**, which you can retrieve on demand (see [Instructions](#id-section3))
+- a file named **Dataset**, which you can retrieve on demand (see [Instructions](#id-section3))
 
 &nbsp;
 
@@ -97,7 +97,7 @@ its path.
 As an exemple, my path is : home/user1/promethee/.
 
 - If you want to use our data : go to [Dataset](#id-section4), follow instructions, and dezip it on **GenderDetection** file. 
-- If you prefer using your own data : put your image(s) (format .jpg) on **../Dataset/mypicture_data** directory. 
+- If you prefer using your own data : put your image(s) (format .jpg) on **..GenderDetection/Dataset/mypicture_data** directory. 
 
 On your terminal, use the cd command and run cd + your GenderDetection path. In my case :
 &nbsp;
