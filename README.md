@@ -54,9 +54,10 @@ Wondonghyeon, thank you for your great work !
 
 &nbsp;
 &nbsp;
-![tree](https://user-images.githubusercontent.com/88309709/128666876-20ebe770-f45f-4174-baa5-858167038d0c.png)
+![image](https://user-images.githubusercontent.com/88309709/128673954-29e9922d-b7d6-40f1-9fac-9563cb84a8b2.png)
 &nbsp;
 &nbsp;
+
 
 
 
@@ -221,7 +222,7 @@ _train.py_ returns:
 - the accuracy of our model 
 - its target loss
   
-This trained model is stored in **../GenderClassification/train**. To use it next time, please replace our "default_model.h5" by this one.
+This trained model is stored in **../GenderClassification/train**. To use it next time, please replace our "GenderDetection_v1.h5" by this one.
   
   
 Which accuracy are you getting? 
