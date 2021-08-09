@@ -124,7 +124,7 @@ four other ones :
 
 
 You can ask for access by clicking here : contact@perception.onl. 
-Meanwhile, you can discover the project ([The project (step by step)](#id-section5)) and Promethee’s concept([What about Prométhée ?](#id-section9))
+Meanwhile, you can discover the project ([The project (step by step)](#id-section5)) and Promethee’s concept ([What about Prométhée ?](#id-section9))
 
 &nbsp;
 
