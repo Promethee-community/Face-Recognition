@@ -181,7 +181,9 @@ Did _test.py_ succeeded on your image(s)?
   
 _gen_val_data.py_ script uses **test2** dataset. Then it generates a 128 octets signature and a gender label, for each image.  
 We are going to evaluate our model's accuracy on this dataset : please run  
-  
+&nbsp;
+`python3 gen_val_data.py`  
+And then :   
 `python3 evaluate.py`
  
 &nbsp;   
@@ -202,9 +204,11 @@ Normally you should get an accuracy of approximately 98%: let's improve it !
   
 ### Model training
 
-_gen_data.py_ script uses **train** and **train2** dataset(s). Then it generates a 128 octets signature and a gender label, for each image.  
+_gen_train_data.py_ script uses **train** and **train2** dataset(s). Then it generates a 128 octets signature and a gender label, for each image.  
 We are going to improve our model's accuracy on these datasets : please run  
-  
+&nbsp;
+`python3 gen_train_data.py`   
+And then:   
 `python3 train.py`
  
 &nbsp;   
